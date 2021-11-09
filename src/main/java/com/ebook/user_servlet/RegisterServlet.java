@@ -22,9 +22,7 @@ public class RegisterServlet extends HttpServlet {
             String email=req.getParameter("email");
             String phone=req.getParameter("phone");
             String password=req.getParameter("password");
-            String check =req.getParameter("check");
 
-//            System.out.println(name+" "+ email+" "+phone+" "+password+" "+check);
             User user = new User();
             user.setName(name);
             user.setEmail(email);
@@ -32,24 +30,13 @@ public class RegisterServlet extends HttpServlet {
             user.setPassword(password);
 
             HttpSession session = req.getSession();
-            if (check!= null){
                 UserDaoImpl dao = new UserDaoImpl(DataBaseConnection.getConnection());
                 boolean f=dao.userRegister(user);
                 if (f) {
                     System.out.println("User Register Success..");
-//                    session.setAttribute("succMsg","Registration Successfully..");
-//                    resp.sendRedirect("register.jsp");
                 } else {
                     System.out.println("Something wrong on server..");
-//                    session.setAttribute("failedMsg","Something wrong on server..");
-//                    resp.sendRedirect("register.jsp");
                 }
-            } else {
-                System.out.println("Please check agree with the community rules ");
-//                session.setAttribute("failedMsg","Please check agree with the community rules");
-//                resp.sendRedirect("register.jsp");
-            }
-
 
         }catch (Exception e){
             e.printStackTrace();

@@ -38,10 +38,6 @@
                             <input type="password" class="form-control" id="exampleInputPassword1"
                                    required="required" name = "password">
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" id= "exampleCheck1" class="form-check-input" name="check"/>
-                            <label for="exampleCheck1"> Agree with the community rules</label>
-                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
