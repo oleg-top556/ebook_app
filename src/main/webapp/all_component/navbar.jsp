@@ -12,7 +12,7 @@
             </form>
         </div>
         <div class="col-md-3">
-            <a href="loging.jsp" class="btn btn-success"><i class="fas fa-sign-in-alt"></i> Sigh In</a>
+            <a href="login.jsp" class="btn btn-success"><i class="fas fa-sign-in-alt"></i> Sigh In</a>
             <a href="register.jsp" class="btn btn-primary"> <i class="fas fa-user-plus"></i> Register</a>
         </div>
     </div>
