@@ -17,6 +17,16 @@
                 <div class="card-body">
                     <h4 class="text-center">Registration Page</h4>
 
+                    <c:if test="${not empty successMsg}">
+                        <h5 class="text-center text-success">${successMsg}</h5>
+                        <c:remove var="successMsg" scope="session" />
+                    </c:if>
+
+                    <c:if test="${not empty failed_reg}">
+                        <h5 class="text-center text-danger">${failed_reg}</h5>
+                        <c:remove var="failed_reg" scope="session" />
+                    </c:if>
+
                     <form action="register" method="post">
                         <div class="form-group">
                             <label for="exampleInputName">Enter Full Name</label>
@@ -37,6 +47,11 @@
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword1"
                                    required="required" name = "password">
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox", class="form-check-input" name="check"
+                            id="exampleCheck1"> <label class="form-check-label" for="exampleCheck1">
+                            Agree with community rules </label>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
