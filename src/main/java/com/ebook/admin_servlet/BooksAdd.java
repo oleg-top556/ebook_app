@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.io.File;
 import java.io.IOException;
 
 @WebServlet("/add_books")
@@ -32,7 +33,12 @@ public class BooksAdd extends HttpServlet {
 
             HttpSession session =req.getSession();
 
+
             if (f){
+
+                File file = new File("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Спринг\\Spring_lessons\\ebook_app\\ebook_app\\src\\main\\webapp\\book");
+
+                part.write("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Спринг\\Spring_lessons\\ebook_app\\ebook_app\\src\\main\\webapp\\book"+File.separator+fileName);
 
                 session.setAttribute("successMsg","Book add successfully");
                 resp.sendRedirect("admin/add_books.jsp");
