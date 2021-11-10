@@ -3,6 +3,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.ebook.entity.BookDtls" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 
 <html>
 <head>
@@ -13,6 +15,17 @@
 <body>
 <%@include file="navbar_for_admin.jsp"%>
 <h3 class="text-center"> Hello Admin </h3>
+
+<c:if test="${not empty successMsg}">
+    <h5 class="text-center text-success"> ${successMsg}</h5>
+    <c:remove var="successMsg" scope="session" />
+</c:if>
+
+<c:if test="${not empty failedMsg}">
+    <h5 class="text-center text-danger"> ${failedMsg}</h5>
+    <c:remove var="failedMsg" scope="session" />
+</c:if>
+
 <table class="table">
     <thead class="thead-dark">
     <tr>
@@ -41,8 +54,8 @@
         <td><%= bookDtls.getBook_category()%></td>
         <td><%= bookDtls.getStatus()%></td>
         <td>
-            <a href="#" class="btn btn-sm btn-primary"> Edit</a>
-            <a href="#" class="btn btn-sm btn-danger"> Delete</a>
+            <a href="edit_books.jsp?id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-primary"> Edit</a>
+            <a href="../delete?id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-danger"> Delete</a>
         </td>
     </tr>
         <%
