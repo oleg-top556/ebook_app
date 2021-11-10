@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <html>
 <head>
     <meta charset="ISO-8859-1">
@@ -13,36 +15,46 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="text-center"> Add Books </h4>
-                    <form action="../AdminAddBookServlet" method="post"
+
+                    <c:if test="${not empty successMsg}">
+                            <p class="text-center text-success"> ${successMsg}</p>
+                        <c:remove var="successMsg" scope="session" />
+                    </c:if>
+
+                    <c:if test="${not empty failedMsg}">
+                        <p class="text-center text-danger"> ${failedMsg}</p>
+                        <c:remove var="failedMsg" scope="session" />
+                    </c:if>
+
+                    <form action="../add_books" method="post"
                           enctype="multipart/form-data">
 
                         <div class="form-group">
                             <label for="exampleInputName">Book Name * </label>
                             <input type="text" class="form-control" id="exampleInputName"
-                                   aria-describedby="emailHelp" name="bname">
+                                   aria-describedby="emailHelp" name="bname_admin">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Author Name * </label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp" name="author">
+                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" name="author_admin">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPhone">Price *</label>
                             <input type="number" class="form-control" id="exampleInputPhone"
-                                   aria-describedby="emailHelp"  name="price">
+                                   aria-describedby="emailHelp"  name="price_admin">
                         </div>
                         <div class="form-group">
-                            <label for="inputCategories">Book Categories</label>
-                            <select id="inputCategories" class="form-control" name="btype">
+                            <label for="inputState">Book Categories</label>
+                            <select id="inputState" class="form-control" name="categories_admin">
                                 <option selected>--select--</option>
                                 <option value="New"> New Book </option>
                                 <option value="Old"> Old Book </option>
-
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="inputStatus">Book Status</label>
-                            <select id="inputStatus" class="form-control" name="bstatus">
+                            <select id="inputStatus" class="form-control" name="bstatus_admin">
                                 <option selected>--select--</option>
                                 <option value="Active"> Active </option>
                                 <option value="Inactive"> Inactive </option>
@@ -50,10 +62,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlFile"> Upload Photo</label>
-                            <input name="bimg" type="file" class="form-control-file"
-                            id="exampleFormControlFile">
+                            <label for="exampleFormControlFile1"> Upload Photo</label>
+                            <input name="bimg_admin" type="file" class="form-control-file"
+                            id="exampleFormControlFile1">
                         </div>
+
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary"> Add </button>
                         </div>
