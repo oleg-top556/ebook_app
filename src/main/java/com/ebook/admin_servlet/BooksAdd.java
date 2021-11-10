@@ -29,16 +29,15 @@ public class BooksAdd extends HttpServlet {
 
             BookDAOImpl dao = new BookDAOImpl(DataBaseConnection.getConnection());
 
+
             boolean f = dao.addBooks(bookDtls);
-
             HttpSession session =req.getSession();
-
 
             if (f){
 
-                File file = new File("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Спринг\\Spring_lessons\\ebook_app\\ebook_app\\src\\main\\webapp\\book");
+                File file = new File("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Спринг\\Ebook_project\\ebook_app\\src\\main\\webapp\\book");
 
-                part.write("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Спринг\\Spring_lessons\\ebook_app\\ebook_app\\src\\main\\webapp\\book"+File.separator+fileName);
+                part.write("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Спринг\\Ebook_project\\ebook_app\\src\\main\\webapp\\book"+File.separator+fileName);
 
                 session.setAttribute("successMsg","Book add successfully");
                 resp.sendRedirect("admin/add_books.jsp");
@@ -50,5 +49,6 @@ public class BooksAdd extends HttpServlet {
         }catch (Exception e){
             e.printStackTrace();
         }
+
     }
 }
