@@ -9,6 +9,9 @@
 </head>
 <body style="background-color: #e6e8eb">
 <%@include file="navbar_for_admin.jsp"%>
+<c:if test="${empty userobj}">
+    <c:redirect url="../login.jsp"/>
+</c:if>
 <div class="container p-3">
     <div class="row">
         <div class="col-md-4 offset-md-4">

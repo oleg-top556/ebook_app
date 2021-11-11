@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <div class="container-fluid" style="height: 10px; background-color: #303f9f"></div>
 
 <div class="container-fluid p-3 ">
@@ -12,8 +14,11 @@
             </form>
         </div>
         <div class="col-md-3">
-            <a href="login.jsp" class="btn btn-success"><i class="fas fa-sign-in-alt"></i> Sigh In</a>
-            <a href="register.jsp" class="btn btn-primary"> <i class="fas fa-user-plus"></i> Register</a>
+            <a href="login.jsp" class="btn btn-success">
+                <i class="fas fa-sign-in-alt"></i> Sigh In</a>
+
+            <a href="register.jsp" class="btn btn-primary">
+                <i class="fas fa-user-plus"></i> Register</a>
         </div>
     </div>
 </div>

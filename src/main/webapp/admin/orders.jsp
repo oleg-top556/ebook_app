@@ -1,13 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Admin: Orders</title>
     <%@include file="allCss_for_admin.jsp"%>
 </head>
-<body>
+<body style="background-color: #e6e8eb">
 <%@include file="navbar_for_admin.jsp"%>
 <h3 class="text-center"> Hello Admin </h3>
+<c:if test="${not empty successMsg}">
+    <p class="text-center text-success"> ${successMsg}</p>
+    <c:remove var="successMsg" scope="session" />
+</c:if>
+
+<c:if test="${not empty failedMsg}">
+    <p class="text-center text-danger"> ${failedMsg}</p>
+    <c:remove var="failedMsg" scope="session" />
+</c:if>
 <table class="table">
     <thead class="thead-dark">
     <tr>

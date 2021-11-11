@@ -12,8 +12,11 @@
     <title>Admin: All Books</title>
     <%@include file="allCss_for_admin.jsp"%>
 </head>
-<body>
+<body style="background-color: #e6e8eb">
 <%@include file="navbar_for_admin.jsp"%>
+<c:if test="${empty userobj}">
+    <c:redirect url="../login.jsp"/>
+</c:if>
 <h3 class="text-center"> Hello Admin </h3>
 
 <c:if test="${not empty successMsg}">
@@ -54,8 +57,8 @@
         <td><%= bookDtls.getBook_category()%></td>
         <td><%= bookDtls.getStatus()%></td>
         <td>
-            <a href="edit_books.jsp?id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-primary"> Edit</a>
-            <a href="../delete?id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-danger"> Delete</a>
+            <a href="edit_books.jsp?id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</a>
+            <a href="../delete?id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-danger"> <i class="fas fa-trash-alt"></i> Delete</a>
         </td>
     </tr>
         <%
