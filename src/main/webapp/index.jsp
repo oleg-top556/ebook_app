@@ -1,5 +1,8 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="com.ebook.DataBaseConnect.DataBaseConnection" %>
+<%@ page import="com.ebook.DAO.BookDAOImpl" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.ebook.entity.BookDtls" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -32,73 +35,47 @@
     <div class="container">
         <h3 class="text-center"> Recent Book </h3>
         <div class="row">
+            <%
+                BookDAOImpl dao2 = new BookDAOImpl(DataBaseConnection.getConnection());
+                List<BookDtls> list2 = dao2.getRecentBook();
+                for (BookDtls bookDtls: list2)
+                {%>
             <div class="col-md-3">
                 <div class="card crd-ho">
                     <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
+                        <img alt="" src="book/<%=bookDtls.getPhotoName()%>"
                              style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <a href="" class="btn btn-danger btn-sm ml-2"> <i class="fas fa-cart-arrow-down"></i> Add Cart</a>
-                            <a href="" class="btn btn-success btn-sm ml-1"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        <p><%= bookDtls.getBook_name()%></p>
+                        <p><%= bookDtls.getAuthor()%></p>
 
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
-                             style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
+                             <%
+                            if (bookDtls.getBook_category().equals("Old")) {
+                             %>
+                        <p>Categories: <%= bookDtls.getBook_category()%></p>
                         <div class="row">
-                            <a href="" class="btn btn-danger btn-sm ml-2"> <i class="fas fa-cart-arrow-down"></i> Add Cart</a>
-                            <a href="" class="btn btn-success btn-sm ml-1"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
+                            <a href="" class="btn btn-success btn-sm ml-5"> View Details</a>
+                            <a href="" class="btn btn-danger btn-sm ml-1">
+                                <%=bookDtls.getPrice()%> <i class="fas fa-dollar-sign"></i></a>
                         </div>
+                            <%
+                            }else {%>
+                                <p>Categories: <%= bookDtls.getBook_category()%></p>
+                        <div class="row">
+                            <a href="" class="btn btn-danger btn-sm ml-2"> </i> Add Cart</a>
+                            <a href="" class="btn btn-success btn-sm ml-1"> View Details</a>
+                            <a href="" class="btn btn-danger btn-sm ml-1">
+                                <%=bookDtls.getPrice()%> <i class="fas fa-dollar-sign"></i></a>
+                        </div>
+                            <%
+                            }
+                            %>
                     </div>
                 </div>
             </div>
+                <%
+                }
+                 %>
 
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
-                             style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <a href="" class="btn btn-danger btn-sm ml-2"> <i class="fas fa-cart-arrow-down"></i> Add Cart</a>
-                            <a href="" class="btn btn-success btn-sm ml-1"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
-                             style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <a href="" class="btn btn-danger btn-sm ml-2"> <i class="fas fa-cart-arrow-down"></i> Add Cart</a>
-                            <a href="" class="btn btn-success btn-sm ml-1"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="text-center mt-1">
             <a href="" class="btn btn-danger btn-sm text-white"> View All</a>
@@ -114,74 +91,35 @@
     <div class="container">
         <h3 class="text-center"> New Book </h3>
         <div class="row">
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
-                             style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <a href="" class="btn btn-danger btn-sm ml-2"><i class="fas fa-cart-arrow-down"></i> Add Cart</a>
-                            <a href="" class="btn btn-success btn-sm ml-1"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
+                <%
+                    BookDAOImpl dao = new BookDAOImpl(DataBaseConnection.getConnection());
+                    List<BookDtls> list = dao.getNewBook();
+                    for (BookDtls bookDtls: list)
+                    {%>
             <div class="col-md-3">
                 <div class="card crd-ho">
                     <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
+                        <img alt="" src="book/<%=bookDtls.getPhotoName()%>"
                              style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
+                        <p><%= bookDtls.getBook_name()%></p>
+                        <p><%= bookDtls.getAuthor()%></p>
+                        <p>Categories: <%= bookDtls.getBook_category()%></p>
                         <div class="row">
-                            <a href="" class="btn btn-danger btn-sm ml-2"> <i class="fas fa-cart-arrow-down"></i> Add Cart</a>
+                            <a href="" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
                             <a href="" class="btn btn-success btn-sm ml-1"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
+                            <a href="" class="btn btn-danger btn-sm ml-1">
+                                <%=bookDtls.getPrice()%>  <i class="fas fa-dollar-sign"></i> </a>
                         </div>
                     </div>
                 </div>
             </div>
+                    <%
+                    }
+                    %>
 
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
-                             style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <a href="" class="btn btn-danger btn-sm ml-2"> <i class="fas fa-cart-arrow-down"></i> Add Cart</a>
-                            <a href="" class="btn btn-success btn-sm ml-1"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
-                             style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <a href="" class="btn btn-danger btn-sm ml-2"> <i class="fas fa-cart-arrow-down"></i> Add Cart</a>
-                            <a href="" class="btn btn-success btn-sm ml-1"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+
         <div class="text-center mt-1">
             <a href="" class="btn btn-danger btn-sm text-white"> View All</a>
         </div>
@@ -196,70 +134,36 @@
     <div class="container">
         <h3 class="text-center"> Old Book </h3>
         <div class="row">
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
-                             style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
-                        <div class="row" >
-                            <a href="" class="btn btn-success btn-sm ml-5"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
-                             style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
-                        <div class="row" >
-                            <a href="" class="btn btn-success btn-sm ml-5"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
-                             style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
-                        <div class="row" >
-                            <a href="" class="btn btn-success btn-sm ml-5"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
+                    <%
+                        BookDAOImpl dao3 = new BookDAOImpl(DataBaseConnection.getConnection());
+                        List<BookDtls> list3 = dao3.getOldBook();
+                        for (BookDtls bookDtls: list3)
+                        {%>
+                    <div class="col-md-3">
+                        <div class="card crd-ho">
+                            <div class="card-body text-center">
+                                <img alt="" src="book/<%=bookDtls.getPhotoName()%>"
+                                     style="width: 150px; height: 200px" class="img-thimblin">
+                                <p><%= bookDtls.getBook_name()%></p>
+                                <p><%= bookDtls.getAuthor()%></p>
+                                <p><%=bookDtls.getBook_category()%></p>
+                                <div class="row">
+                                    <a href="" class="btn btn-success btn-sm ml-5"> View Details</a>
+                                    <a href="" class="btn btn-danger btn-sm ml-1">
+                                        <%=bookDtls.getPrice()%>  <i class="fas fa-dollar-sign"></i> </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <%
+                        }
+                    %>
 
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" src="book/java.jpg"
-                             style="width: 150px; height: 200px" class="img-thimblin">
-                        <p>Java Programming</p>
-                        <p>Goetz</p>
-                        <p>Categories: New</p>
-                        <div class="row" >
-                            <a href="" class="btn btn-success btn-sm ml-5"> View Details</a>
-                            <a href="" class="btn btn-danger btn-sm ml-1"> 299</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
+
         <div class="text-center mt-1">
             <a href="" class="btn btn-danger btn-sm text-white"> View All</a>
         </div>
