@@ -1,4 +1,11 @@
+<%@ page import="com.ebook.DAO.CartDAOImpl" %>
+<%@ page import="com.ebook.DataBaseConnect.DataBaseConnection" %>
+<%@ page import="com.ebook.entity.User" %>
+<%@ page import="com.ebook.entity.Cart" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -7,6 +14,25 @@
 </head>
 <body style="background-color: #e6e8eb">
 <%@include file="all_component/navbar.jsp" %>
+
+    <c:if test="${empty userobj}">
+        <c:redirect url="login.jsp"> </c:redirect>
+    </c:if>
+
+    <c:if test="${not empty successMsg}">
+        <div class="alert alert-success" role="alert">
+           ${successMsg}
+        </div>
+        <c:remove var="successMsg" scope="session"/>
+    </c:if>
+
+    <c:if test="${not empty failedMsg}">
+        <div class="alert alert-danger  " role="alert">
+           ${failedMsg}
+        </div>
+        <c:remove var="failedMsg" scope="session"/>
+    </c:if>
+
     <div class="container">
         <div class="row p-2">
             <div class="col-md-6">
@@ -23,24 +49,35 @@
                             </tr>
                             </thead>
                             <tbody>
+
+                            <%
+                                User user = (User) session.getAttribute("userobj");
+                                CartDAOImpl dao = new CartDAOImpl(DataBaseConnection.getConnection());
+                                List<Cart> cart = dao.getBookByUser(user.getId());
+                                Double totalPrice=0.0;
+                                for (Cart c : cart) {
+                                    totalPrice=c.getTotal_price();
+                            %>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <th scope="row"><%=c.getBookName()%></th>
+                                <td><%=c.getAuthor()%></td>
+                                <td><%=c.getPrice()%></td>
+                                <td>
+                                    <a href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>"
+                                       class="btn btn-sm btn-danger"> Remove </a>
+                                </td>
                             </tr>
+                            <%
+                                }
+                            %>
+
                             <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
+                                <td>Total Price</td>
+                                <td></td>
+                                <td></td>
+                                <td><%=totalPrice%></td>
                             </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -56,12 +93,14 @@
                                 <div class="form-group col-md-6">
                                     <label for="inputName4">Name</label>
                                     <input type="text" class="form-control"
-                                           id="inputName4" value="">
+                                           id="inputName4" value="<%=user.getName()%>"
+                                            readonly="readonly">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputEmail4">Email</label>
                                     <input type="email" class="form-control"
-                                           id="inputEmail4" >
+                                           id="inputEmail4" value="<%=user.getEmail()%>"
+                                           readonly="readonly">
                                 </div>
                             </div>
 
@@ -69,7 +108,7 @@
                                 <div class="form-group col-md-6">
                                     <label for="inputPhone4">Mobile phone</label>
                                     <input type="number" class="form-control"
-                                           id="inputPhone4" >
+                                           id="inputPhone4" value="<%=user.getPhone()%>">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputAddress4">Address</label>
