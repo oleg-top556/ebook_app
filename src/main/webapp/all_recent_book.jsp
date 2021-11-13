@@ -48,6 +48,8 @@
                         }else {%>
                         <p>Categories: <%= bookDtls.getBook_category()%></p>
                         <div class="row">
+
+
                             <a href="" class="btn btn-danger btn-sm ml-5"> </i> Add Cart</a>
                             <a href="" class="btn btn-success btn-sm ml-2"> View Details</a>
                             <a href="" class="btn btn-danger btn-sm ml-2">

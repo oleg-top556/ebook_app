@@ -3,6 +3,7 @@
 <%@ page import="com.ebook.DAO.BookDAOImpl" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.ebook.entity.BookDtls" %>
+<%@ page import="com.ebook.entity.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -24,6 +25,11 @@
     </style>
 </head>
 <body style="background-color: #e6e8eb">
+
+<%
+    User u = (User) session.getAttribute("userobj");
+%>
+
     <%@include file="all_component/navbar.jsp" %>
     <div class="container-fluid back-img" >
         <h2 class = "text-white text_h2" style="margin-left: 31.5%">
@@ -61,8 +67,18 @@
                             }else {%>
                                 <p>Categories: <%= bookDtls.getBook_category()%></p>
                         <div class="row">
-                            <a href="" class="btn btn-danger btn-sm ml-2"> </i> Add Cart</a>
-                            <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-1"> View Details</a>
+
+                            <% if (u==null)
+                            {%>
+                            <a href="login.jsp" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                            <%} else {%>
+                            <a href="cart?bid=<%=bookDtls.getBook_id() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                            <%
+                                }
+                            %>
+
+                            <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>"
+                               class="btn btn-success btn-sm ml-1"> View Details</a>
                             <a href="" class="btn btn-danger btn-sm ml-1">
                                 <%=bookDtls.getPrice()%> <i class="fas fa-dollar-sign"></i></a>
                         </div>
@@ -105,9 +121,22 @@
                         <p><%= bookDtls.getBook_name()%></p>
                         <p><%= bookDtls.getAuthor()%></p>
                         <p>Categories: <%= bookDtls.getBook_category()%></p>
+
                         <div class="row">
-                            <a href="" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
-                            <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-1"> View Details</a>
+
+                            <% if (u==null)
+                            {%>
+                            <a href="login.jsp" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                            <%} else {%>
+                            <a href="cart?bid=<%=bookDtls.getBook_id() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                            <%
+                            }
+                            %>
+
+
+                            <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>"
+                               class="btn btn-success btn-sm ml-1"> View Details</a>
+
                             <a href="" class="btn btn-danger btn-sm ml-1">
                                 <%=bookDtls.getPrice()%>  <i class="fas fa-dollar-sign"></i> </a>
                         </div>

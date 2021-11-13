@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>All Recent Books</title>
+    <title>All Old Books</title>
     <%@include file="all_component/allCss.jsp" %>
 </head>
 <body  style="background-color: #e6e8eb">
