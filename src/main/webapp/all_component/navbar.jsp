@@ -17,9 +17,9 @@
         <c:if test="${not empty userobj}">
             <div class="col-md-3" >
 
-                <a href="checkout.jsp" class=""> <i class="fas fa-cart-plus fa-2x"></i> </a>
+                <a href="checkout.jsp" class="btn btn-danger  text-white"> <i class="fas fa-cart-plus fa-1x"></i> Cart </a>
 
-                <a href="login.jsp" class="btn btn-success">
+                <a href="index.jsp" class="btn btn-success">
                     <i class="fas fa-user"></i> ${userobj.name}</a>
 
                 <a href="logout" class="btn btn-primary">
@@ -70,8 +70,8 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
 
-            <button class="btn btn-light my-2 my-sm-0" type="submit">
-                <i class="fas fa-cogs"></i> Setting</button>
+            <a href="setting.jsp" class="btn btn-light my-2 my-sm-0" type="submit">
+                <i class="fas fa-cogs"></i> Setting</a>
             <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
                 <i class="fas fa-phone"></i> Contacts</button>
         </form>
