@@ -13,13 +13,34 @@
                 <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
-        <div class="col-md-3">
-            <a href="login.jsp" class="btn btn-success">
-                <i class="fas fa-sign-in-alt"></i> Sigh In</a>
 
-            <a href="register.jsp" class="btn btn-primary">
-                <i class="fas fa-user-plus"></i> Register</a>
-        </div>
+        <c:if test="${not empty userobj}">
+            <div class="col-md-3" >
+
+                <a href="cart.jsp" class=""> <i class="fas fa-cart-plus fa-2x"></i> </a>
+
+                <a href="login.jsp" class="btn btn-success">
+                    <i class="fas fa-user"></i> ${userobj.name}</a>
+
+                <a href="logout" class="btn btn-primary">
+                     Logout <i class="fas fa-sign-in-alt"></i> </a>
+            </div>
+
+        </c:if>
+
+
+        <c:if test="${empty userobj}">
+
+            <div class="col-md-3">
+                <a href="login.jsp" class="btn btn-success">
+                    <i class="fas fa-sign-in-alt"></i> Sigh In</a>
+
+                <a href="register.jsp" class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i> Register</a>
+            </div>
+
+        </c:if>
+
     </div>
 </div>
 
