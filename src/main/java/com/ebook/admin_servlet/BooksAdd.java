@@ -35,9 +35,9 @@ public class BooksAdd extends HttpServlet {
 
             if (f){
 
-                File file = new File("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Spring\\Spring_lessons\\ebook_app\\src\\main\\webapp\\book");
+                File file = new File("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Spring\\ebook_app\\src\\main\\webapp\\book");
 
-                part.write("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Spring\\Spring_lessons\\ebook_app\\src\\main\\webapp\\book"+File.separator+fileName);
+                part.write("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Spring\\ebook_app\\src\\main\\webapp\\book"+File.separator+fileName);
 
                 session.setAttribute("successMsg","Book add successfully");
                 resp.sendRedirect("admin/add_books.jsp");
