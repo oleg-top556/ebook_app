@@ -178,7 +178,8 @@
                                 <p><%= bookDtls.getAuthor()%></p>
                                 <p><%=bookDtls.getBook_category()%></p>
                                 <div class="row">
-                                    <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-5"> View Details</a>
+                                    <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>"
+                                       class="btn btn-success btn-sm ml-5"> View Details</a>
                                     <a href="" class="btn btn-danger btn-sm ml-1">
                                         <%=bookDtls.getPrice()%>  <i class="fas fa-dollar-sign"></i> </a>
                                 </div>

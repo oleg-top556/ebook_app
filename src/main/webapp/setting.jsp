@@ -7,8 +7,7 @@
     <title>Title</title>
     <%@include file="all_component/allCss.jsp" %>
 </head>
-<body style="background-color: #e6e8eb">
-<%@include file="all_component/navbar.jsp" %>
+
 <style type="text/css">
     a {
         text-decoration: none;
@@ -18,10 +17,19 @@
         text-decoration: none;
     }
 </style>
+<body style="background-color: #e6e8eb">
 
+<c:if test="${empty userobj}">
+    <c:redirect url="login.jsp"/>
+</c:if>
+
+<%@include file="all_component/navbar.jsp" %>
 
 <div class="container">
-    <h3 class="text-center p-3">Hello, Oleh</h3>
+
+        <h3 class="text-center p-3">Hello, ${userobj.name} </h3>
+
+
     <div class="row p-3">
         <div class="col-md-6">
             <a href="sell_book.jsp" >

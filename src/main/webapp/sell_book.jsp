@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -6,6 +8,10 @@
     <%@include file="all_component/allCss.jsp" %>
 </head>
 <body style="background-color: #e6e8eb">
+
+<c:if test="${empty userobj}">
+    <c:redirect url="login.jsp"/>
+</c:if>
 <%@include file="all_component/navbar.jsp" %>
     <div class="container">
         <div class="row p-3">
@@ -13,8 +19,22 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="text-center text-success">Sell old book</h4>
-                        <form action="" method="post"
+
+                        <c:if test="${not empty successMsg}">
+                            <p class="text-center text-primary"> ${successMsg}</p>
+                            <c:remove var="successMsg" scope="session" />
+                        </c:if>
+
+                        <c:if test="${not empty failedMsg}">
+                            <p class="text-center text-danger"> ${failedMsg}</p>
+                            <c:remove var="failedMsg" scope="session" />
+                        </c:if>
+
+                        <form action="add_old_book" method="post"
                               enctype="multipart/form-data">
+
+
+                            <input type="hidden" value="${userobj.email}" name="user">
 
                             <div class="form-group">
                                 <label for="exampleInputName">Book Name </label>
