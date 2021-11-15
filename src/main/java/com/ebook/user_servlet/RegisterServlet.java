@@ -37,11 +37,9 @@ public class RegisterServlet extends HttpServlet {
                 boolean f = dao.userRegister(user);
 
                 if (f) {
-//                    System.out.println("User Register Success..");
                     session.setAttribute("successMsg", "Registration Successfully");
                     resp.sendRedirect("register.jsp");
                 } else {
-//                    System.out.println("Something wrong on server..");
                     session.setAttribute("failed_reg", "Something wrong on server");
                     resp.sendRedirect("register.jsp");
                 }
