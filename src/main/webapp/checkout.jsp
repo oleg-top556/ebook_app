@@ -20,14 +20,14 @@
     </c:if>
 
     <c:if test="${not empty successMsg}">
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success text-center" role="alert">
            ${successMsg}
         </div>
         <c:remove var="successMsg" scope="session"/>
     </c:if>
 
     <c:if test="${not empty failedMsg}">
-        <div class="alert alert-danger  " role="alert">
+        <div class="alert alert-danger text-center" role="alert">
            ${failedMsg}
         </div>
         <c:remove var="failedMsg" scope="session"/>
@@ -87,19 +87,20 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form>
-                            <h3 class="text-center text-success">Your Details for Order </h3>
+                        <h3 class="text-center text-success">Your Details for Order </h3>
+                        <form action="order" method="post">
+                            <input type="hidden" value="${userobj.id}" name="id">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputName4">Name</label>
-                                    <input type="text" class="form-control"
-                                           id="inputName4" value="<%=user.getName()%>"
+                                    <input type="text" name="username" class="form-control"
+                                           id="inputName4" value="${userobj.name}"
                                             readonly="readonly">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputEmail4">Email</label>
-                                    <input type="email" class="form-control"
-                                           id="inputEmail4" value="<%=user.getEmail()%>"
+                                    <input type="email" name="email" class="form-control"
+                                           id="inputEmail4" value="${userobj.email}"
                                            readonly="readonly">
                                 </div>
                             </div>
@@ -107,12 +108,12 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputPhone4">Mobile phone</label>
-                                    <input type="number" class="form-control"
-                                           id="inputPhone4" value="<%=user.getPhone()%>">
+                                    <input type="number" name="phone" class="form-control"
+                                           id="inputPhone4" value="${userobj.phone}">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputAddress4">Address</label>
-                                    <input type="text" class="form-control"
+                                    <input type="text" name="address" class="form-control"
                                            id="inputAddress4" >
                                 </div>
                             </div>
@@ -120,12 +121,12 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputRegion4">Region</label>
-                                    <input type="text" class="form-control"
+                                    <input type="text" name="region" class="form-control"
                                            id="inputRegion4" >
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputCity4">City</label>
-                                    <input type="text" class="form-control"
+                                    <input type="text" name="city" class="form-control"
                                            id="inputCity4" >
                                 </div>
                             </div>
@@ -133,21 +134,21 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputDistrict4">District</label>
-                                    <input type="text" class="form-control"
+                                    <input type="text" name="district" class="form-control"
                                            id="inputDistrict4" >
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputZip4">Zip</label>
-                                    <input type="number" class="form-control"
+                                    <input type="number" name="zip_code" class="form-control"
                                            id="inputZip4" >
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="inputState">Payment Type</label>
-                                <select id="inputState" class="form-control">
-                                    <option>--Select--</option>
-                                    <option>Cash on delivery</option>
+                                <select id="inputState" class="form-control" name="payment">
+                                    <option value="noselect">--Select--</option>
+                                    <option value="COD">Cash on delivery</option>
                                 </select>
                             </div>
 
