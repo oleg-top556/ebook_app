@@ -1,3 +1,7 @@
+<%@ page import="com.ebook.DAO.BookOrderImpl" %>
+<%@ page import="com.ebook.DataBaseConnect.DataBaseConnection" %>
+<%@ page import="com.ebook.entity.BookOrder" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored="false" %>
@@ -8,7 +12,12 @@
     <%@include file="allCss_for_admin.jsp"%>
 </head>
 <body style="background-color: #e6e8eb">
+<c:if test="${empty userobj}">
+    <c:redirect url="../login.jsp"/>
+</c:if>
 <%@include file="navbar_for_admin.jsp"%>
+
+
 <h3 class="text-center"> Hello Admin </h3>
 <c:if test="${not empty successMsg}">
     <p class="text-center text-success"> ${successMsg}</p>
@@ -34,40 +43,28 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>Otto</td>
-        <td>@mdo</td>
 
-    </tr>
+    <%
+        BookOrderImpl dao = new BookOrderImpl(DataBaseConnection.getConnection());
+        List<BookOrder> bookOrderList = dao.getAllOrder();
+        for (BookOrder b: bookOrderList)
+        {%>
     <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row"><%=b.getOrder()%></th>
+        <td><%=b.getUser_name()%></td>
+        <td><%=b.getEmail()%></td>
+        <td><%=b.getFullAdd()%></td>
+        <td><%=b.getPhone()%></td>
+        <td><%=b.getBookName()%></td>
+        <td><%=b.getAuthor()%></td>
+        <td><%=b.getPrice()%></td>
+        <td><%=b.getPaymentType()%></td>
     </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-    </tr>
+    <%
+        }
+    %>
+
+
 
     </tbody>
 </table>

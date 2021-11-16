@@ -95,13 +95,13 @@
                                     <label for="inputName4">Name</label>
                                     <input type="text" name="username" class="form-control"
                                            id="inputName4" value="${userobj.name}"
-                                            readonly="readonly">
+                                            readonly="readonly" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputEmail4">Email</label>
                                     <input type="email" name="email" class="form-control"
                                            id="inputEmail4" value="${userobj.email}"
-                                           readonly="readonly">
+                                           readonly="readonly" required>
                                 </div>
                             </div>
 
@@ -109,12 +109,12 @@
                                 <div class="form-group col-md-6">
                                     <label for="inputPhone4">Mobile phone</label>
                                     <input type="number" name="phone" class="form-control"
-                                           id="inputPhone4" value="${userobj.phone}">
+                                           id="inputPhone4" value="${userobj.phone}" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputAddress4">Address</label>
                                     <input type="text" name="address" class="form-control"
-                                           id="inputAddress4" >
+                                           id="inputAddress4" required>
                                 </div>
                             </div>
 
@@ -122,12 +122,12 @@
                                 <div class="form-group col-md-6">
                                     <label for="inputRegion4">Region</label>
                                     <input type="text" name="region" class="form-control"
-                                           id="inputRegion4" >
+                                           id="inputRegion4" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputCity4">City</label>
                                     <input type="text" name="city" class="form-control"
-                                           id="inputCity4" >
+                                           id="inputCity4" required>
                                 </div>
                             </div>
 
@@ -135,12 +135,12 @@
                                 <div class="form-group col-md-6">
                                     <label for="inputDistrict4">District</label>
                                     <input type="text" name="district" class="form-control"
-                                           id="inputDistrict4" >
+                                           id="inputDistrict4" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputZip4">Zip</label>
                                     <input type="number" name="zip_code" class="form-control"
-                                           id="inputZip4" >
+                                           id="inputZip4" required>
                                 </div>
                             </div>
 
