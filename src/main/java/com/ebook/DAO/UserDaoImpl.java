@@ -114,4 +114,23 @@ public class UserDaoImpl implements UserDao{
 
         return f;
     }
+
+    @Override
+    public boolean checkUser(String em) {
+        boolean f =true;
+
+       try {
+           String sql = "select * from user where email=?";
+           PreparedStatement ps=connection.prepareStatement(sql);
+           ps.setString(1,em);
+           ResultSet rs = ps.executeQuery();
+           while (rs.next()){
+               f=false;
+           }
+       }catch (Exception e){
+           e.printStackTrace();
+       }
+
+        return f;
+    }
 }

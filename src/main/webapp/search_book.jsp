@@ -9,72 +9,69 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>All New Books</title>
+    <title>All Recent Books</title>
     <%@include file="all_component/allCss.jsp" %>
-    <style type="text/css">
+</head>
+<body  style="background-color: #e6e8eb">
+<%
+    User u = (User) session.getAttribute("userobj");
+%>
+<%@include file="all_component/navbar.jsp" %>
+<style type="text/css">
     .crd-ho:hover{
         background: #fcf7f7;
     }
 
 </style>
-</head>
-<body  style="background-color: #e6e8eb">
-
-<%
-    User u = (User) session.getAttribute("userobj");
-%>
-
-    <c:if test="${not empty addCart}">
-
-        <div id="toast"> ${addCart} </div>
-
-        <script type="text/javascript">
-            showToast();
-            function showToast(content)
-            {
-                $('#toast').addClass("display");
-                $('#toast').html(content);
-                setTimeout(()=>{
-                    $("#toast").removeClass("display");
-            },2000)
-            }
-        </script>
-    <c:remove var="addCart" scope="session"/>
-
-    </c:if>
-
-<%@include file="all_component/navbar.jsp" %>
 
 <div class="container-fluid">
     <div class="row p-3">
 
         <%
-            BookDAOImpl dao = new BookDAOImpl(DataBaseConnection.getConnection());
-            List<BookDtls> list = dao.getAllNewBook();
-            for (BookDtls bookDtls: list)
+            String ch = request.getParameter("ch");
+            BookDAOImpl dao2 = new BookDAOImpl(DataBaseConnection.getConnection());
+            List<BookDtls> list2 = dao2.getBookBySearch(ch);
+            for (BookDtls bookDtls: list2)
             {%>
         <div class="col-md-3">
             <div class="card crd-ho mt-2">
+
                 <div class="card-body text-center">
                     <img alt="" src="book/<%=bookDtls.getPhotoName()%>"
                          style="width: 150px; height: 200px" class="img-thimblin">
                     <p><%= bookDtls.getBook_name()%></p>
                     <p><%= bookDtls.getAuthor()%></p>
+
+                    <%
+                        if (bookDtls.getBook_category().equals("Old")) {
+                    %>
                     <p>Categories: <%= bookDtls.getBook_category()%></p>
                     <div class="row">
+                        <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-5"> View Details</a>
+                        <a href="" class="btn btn-danger btn-sm ml-1">
+                            <%=bookDtls.getPrice()%> <i class="fas fa-dollar-sign"></i></a>
+                    </div>
+                    <%
+                    }else {%>
+                    <p>Categories: <%= bookDtls.getBook_category()%></p>
+                    <div class="row">
+
+
                         <% if (u==null)
                         {%>
                         <a href="login.jsp" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
                         <%} else {%>
-                        <a href="cart?bid=<%=bookDtls.getBook_id()%>&&uid=<%=u.getId()%>"
-                           class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                        <a href="cart?bid=<%=bookDtls.getBook_id() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
                         <%
                             }
                         %>
-                        <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-1"> View Details</a>
-                        <a href="" class="btn btn-danger btn-sm ml-1">
-                            <%=bookDtls.getPrice()%>  <i class="fas fa-dollar-sign"></i> </a>
+                        <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-2"> View Details</a>
+                        <a href="" class="btn btn-danger btn-sm ml-2">
+                            <%=bookDtls.getPrice()%> <i class="fas fa-dollar-sign"></i></a>
                     </div>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </div>
