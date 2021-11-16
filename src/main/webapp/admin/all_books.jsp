@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Admin: All Books</title>
+    <title>Адмін: Всі книги </title>
     <%@include file="allCss_for_admin.jsp"%>
 </head>
 <body style="background-color: #e6e8eb">
@@ -32,14 +32,14 @@
 <table class="table">
     <thead class="thead-dark">
     <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Image</th>
-        <th scope="col">Book Name</th>
-        <th scope="col">Author</th>
-        <th scope="col">Price</th>
-        <th scope="col">Categories</th>
-        <th scope="col">Status</th>
-        <th scope="col">Action</th>
+        <th scope="col">Номер</th>
+        <th scope="col">Малюнок</th>
+        <th scope="col">Назва книги</th>
+        <th scope="col">Автор</th>
+        <th scope="col">Ціна</th>
+        <th scope="col">Категорії</th>
+        <th scope="col">Статус</th>
+        <th scope="col">Дії</th>
     </tr>
     </thead>
     <tbody>
@@ -57,8 +57,8 @@
         <td><%= bookDtls.getBook_category()%></td>
         <td><%= bookDtls.getStatus()%></td>
         <td>
-            <a href="edit_books.jsp?id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</a>
-            <a href="../delete?id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-danger"> <i class="fas fa-trash-alt"></i> Delete</a>
+            <a href="edit_books.jsp?id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Виправити книги </a>
+            <a href="../delete?id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-danger"> <i class="fas fa-trash-alt"></i> Видалити книгу </a>
         </td>
     </tr>
         <%

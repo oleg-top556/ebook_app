@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Настройка</title>
     <%@include file="all_component/allCss.jsp" %>
 </head>
 
@@ -27,7 +27,7 @@
 
 <div class="container">
 
-        <h3 class="text-center p-3">Hello, ${userobj.name} </h3>
+        <h3 class="text-center p-3">Привіт, ${userobj.name} </h3>
 
 
     <div class="row p-3">
@@ -38,7 +38,7 @@
                         <div class="text-primary">
                         <i class="fas fa-book-open fa-3x"></i>
                         </div>
-                        <h3> Sell old book </h3>
+                        <h3> Продажа старої книги </h3>
                     </div>
                 </div>
             </a>
@@ -52,7 +52,7 @@
                         <div class="text-primary">
                             <i class="fas fa-book-open fa-3x"></i>
                         </div>
-                        <h3> Old book </h3>
+                        <h3> Стара книжка </h3>
                     </div>
                 </div>
             </a>
@@ -65,7 +65,7 @@
                         <div class="text-primary">
                             <i class="fas fa-user-edit fa-3x"></i>
                         </div>
-                        <h4> Edit Profile </h4>
+                        <h4> Виправити профіль </h4>
                     </div>
                 </div>
             </a>
@@ -81,8 +81,8 @@
                         <div class="text-danger">
                             <i class="fas fa-box-open fa-3x"></i>
                         </div>
-                        <h4> My Order </h4>
-                        <p>Track Your Order</p>
+                        <h4> Мої замовлення </h4>
+                        <p> Відстеження замовлень</p>
                     </div>
                 </div>
             </a>
@@ -96,8 +96,8 @@
                         <div class="text-success">
                             <i class="fas fa-user-circle fa-3x"></i>
                         </div>
-                        <h4> Help Center </h4>
-                        <p>Day and night</p>
+                        <h4> Центр допомоги </h4>
+                        <p>Цілодобово</p>
                     </div>
                 </div>
             </a>
@@ -108,7 +108,7 @@
     </div>
 </div>
 
-<div style="margin-top: 5.6rem"></div>
+<div style="margin-top: 7.1rem"></div>
 <%@include file="all_component/footer.jsp"%>
 </body>
 </html>

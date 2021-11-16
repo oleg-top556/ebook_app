@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Admin: Add Books</title>
+    <title>Адмін: Виправити книги</title>
     <%@include file="allCss_for_admin.jsp"%>
 </head>
 <body style="background-color: #e6e8eb">
@@ -17,7 +17,7 @@
         <div class="col-md-4 offset-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="text-center"> Edit Books </h4>
+                    <h4 class="text-center"> Виправити книги </h4>
 
                     <%
                         int id = Integer.parseInt(request.getParameter("id"));

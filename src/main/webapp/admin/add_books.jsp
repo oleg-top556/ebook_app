@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Admin: Add Books</title>
+    <title>Адмін: Добавити Книги </title>
     <%@include file="allCss_for_admin.jsp"%>
 </head>
 <body style="background-color: #e6e8eb">
@@ -17,7 +17,7 @@
         <div class="col-md-4 offset-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="text-center"> Add Books </h4>
+                    <h4 class="text-center"> Добавити книги </h4>
 
                     <c:if test="${not empty successMsg}">
                             <p class="text-center text-success"> ${successMsg}</p>
@@ -33,45 +33,45 @@
                           enctype="multipart/form-data">
 
                         <div class="form-group">
-                            <label for="exampleInputName">Book Name * </label>
+                            <label for="exampleInputName">Назва книги  </label>
                             <input type="text" class="form-control" id="exampleInputName"
                                    aria-describedby="emailHelp" name="bname_admin">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Author Name * </label>
+                            <label for="exampleInputEmail1">Автор книги  </label>
                             <input type="text" class="form-control" id="exampleInputEmail1"
                                    aria-describedby="emailHelp" name="author_admin">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPhone">Price *</label>
+                            <label for="exampleInputPhone">Ціна книги </label>
                             <input type="number" class="form-control" id="exampleInputPhone"
                                    aria-describedby="emailHelp"  name="price_admin">
                         </div>
                         <div class="form-group">
-                            <label for="inputState">Book Categories</label>
+                            <label for="inputState">Катеогорії Книг</label>
                             <select id="inputState" class="form-control" name="categories_admin">
                                 <option selected>--select--</option>
-                                <option value="New"> New Book </option>
-                                <option value="Old"> Old Book </option>
+                                <option value="New"> Нова книга  </option>
+                                <option value="Old"> Засторіла книга </option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="inputStatus">Book Status</label>
+                            <label for="inputStatus">Статус Книги </label>
                             <select id="inputStatus" class="form-control" name="bstatus_admin">
                                 <option selected>--select--</option>
-                                <option value="Active"> Active </option>
-                                <option value="Inactive"> Inactive </option>
+                                <option value="Active"> Активна </option>
+                                <option value="Inactive"> Неактивна </option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlFile1"> Upload Photo</label>
+                            <label for="exampleFormControlFile1"> Загрузити фото</label>
                             <input name="bimg_admin" type="file" class="form-control-file"
                             id="exampleFormControlFile1">
                         </div>
 
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary"> Add </button>
+                            <button type="submit" class="btn btn-primary"> Добавити </button>
                         </div>
                     </form>
 

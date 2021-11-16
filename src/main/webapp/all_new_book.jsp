@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>All New Books</title>
+    <title>Всі нові книжки</title>
     <%@include file="all_component/allCss.jsp" %>
     <style type="text/css">
     .crd-ho:hover{
@@ -64,14 +64,14 @@
                     <div class="row">
                         <% if (u==null)
                         {%>
-                        <a href="login.jsp" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                        <a href="login.jsp" class="btn btn-danger btn-sm ml-2">Корзина</a>
                         <%} else {%>
                         <a href="cart?bid=<%=bookDtls.getBook_id()%>&&uid=<%=u.getId()%>"
-                           class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                           class="btn btn-danger btn-sm ml-2">Корзина</a>
                         <%
                             }
                         %>
-                        <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-1"> View Details</a>
+                        <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-1"> Інформація про книгу </a>
                         <a href="" class="btn btn-danger btn-sm ml-1">
                             <%=bookDtls.getPrice()%>  <i class="fas fa-dollar-sign"></i> </a>
                     </div>

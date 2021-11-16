@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>User : Old Book </title>
+    <title>Старі книжки </title>
     <%@include file="all_component/allCss.jsp" %>
 </head>
 <body style="background-color: #e6e8eb">
@@ -27,11 +27,11 @@
     <table class="table table-striped">
         <thead class="bg-primary text-white">
         <tr>
-            <th scope="col">Book Name</th>
-            <th scope="col">Author</th>
-            <th scope="col">Price</th>
-            <th scope="col">Category</th>
-            <th scope="col">Action</th>
+            <th scope="col">Назва книжки</th>
+            <th scope="col">Автор</th>
+            <th scope="col">Ціна</th>
+            <th scope="col">Категорії</th>
+            <th scope="col">Дії</th>
         </tr>
         </thead>
         <tbody>
@@ -49,7 +49,7 @@
                 <td><%=bookDtls.getAuthor()%></td>
                 <td><%=bookDtls.getPrice()%></td>
                 <td><%=bookDtls.getBook_category()%></td>
-                <td><a href="delete_old_book?em=<%=email%>&&id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-danger"> Delete </a> </td>
+                <td><a href="delete_old_book?em=<%=email%>&&id=<%=bookDtls.getBook_id()%>" class="btn btn-sm btn-danger"> Видалити </a> </td>
              </tr>
             <%
             }

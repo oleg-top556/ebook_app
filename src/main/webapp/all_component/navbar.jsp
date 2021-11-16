@@ -72,8 +72,8 @@
 
             <a href="setting.jsp" class="btn btn-light my-2 my-sm-0" type="submit">
                 <i class="fas fa-cogs"></i> Setting</a>
-            <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
-                <i class="fas fa-phone"></i> Contacts</button>
+            <a href="helpline.jsp" class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
+                <i class="fas fa-phone"></i> Contacts</a>
         </form>
     </div>
 </nav>

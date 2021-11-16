@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Cart</title>
+    <title>Корзина</title>
     <%@include file="all_component/allCss.jsp" %>
 </head>
 <body style="background-color: #e6e8eb">
@@ -38,14 +38,14 @@
             <div class="col-md-6">
                 <div class="card bg-white">
                     <div class="card-body">
-                        <h3 class="text-center text-success">Your Selected Books </h3>
+                        <h3 class="text-center text-success">Ваші вибрані книжки </h3>
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th scope="col">Book Name</th>
-                                <th scope="col">Author</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Назва книг</th>
+                                <th scope="col">Автор</th>
+                                <th scope="col">Ціна</th>
+                                <th scope="col">Дії</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -64,7 +64,7 @@
                                 <td><%=c.getPrice()%></td>
                                 <td>
                                     <a href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>"
-                                       class="btn btn-sm btn-danger"> Remove </a>
+                                       class="btn btn-sm btn-danger"> Видалити </a>
                                 </td>
                             </tr>
                             <%
@@ -72,7 +72,7 @@
                             %>
 
                             <tr>
-                                <td>Total Price</td>
+                                <td>Ціна в цілому </td>
                                 <td></td>
                                 <td></td>
                                 <td><%=totalPrice%></td>
@@ -87,18 +87,18 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="text-center text-success">Your Details for Order </h3>
+                        <h3 class="text-center text-success">Ваші деталі для замовлення </h3>
                         <form action="order" method="post">
                             <input type="hidden" value="${userobj.id}" name="id">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputName4">Name</label>
+                                    <label for="inputName4">Ім'я</label>
                                     <input type="text" name="username" class="form-control"
                                            id="inputName4" value="${userobj.name}"
                                             readonly="readonly" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Email</label>
+                                    <label for="inputEmail4">Пошта</label>
                                     <input type="email" name="email" class="form-control"
                                            id="inputEmail4" value="${userobj.email}"
                                            readonly="readonly" required>
@@ -107,12 +107,12 @@
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputPhone4">Mobile phone</label>
+                                    <label for="inputPhone4">Мобільний телефон</label>
                                     <input type="number" name="phone" class="form-control"
                                            id="inputPhone4" value="${userobj.phone}" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inputAddress4">Address</label>
+                                    <label for="inputAddress4">Адреса</label>
                                     <input type="text" name="address" class="form-control"
                                            id="inputAddress4" required>
                                 </div>
@@ -120,12 +120,12 @@
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputRegion4">Region</label>
+                                    <label for="inputRegion4">Регіон</label>
                                     <input type="text" name="region" class="form-control"
                                            id="inputRegion4" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inputCity4">City</label>
+                                    <label for="inputCity4">Місто</label>
                                     <input type="text" name="city" class="form-control"
                                            id="inputCity4" required>
                                 </div>
@@ -133,28 +133,28 @@
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputDistrict4">District</label>
+                                    <label for="inputDistrict4">Район</label>
                                     <input type="text" name="district" class="form-control"
                                            id="inputDistrict4" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inputZip4">Zip</label>
+                                    <label for="inputZip4">Код пошти </label>
                                     <input type="number" name="zip_code" class="form-control"
                                            id="inputZip4" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputState">Payment Type</label>
+                                <label for="inputState">Тип оплати</label>
                                 <select id="inputState" class="form-control" name="payment">
-                                    <option value="noselect">--Select--</option>
-                                    <option value="COD">Cash on delivery</option>
+                                    <option value="noselect">--Вибрати--</option>
+                                    <option value="COD">Оплата налічкой</option>
                                 </select>
                             </div>
 
                             <div class="text-center">
-                                <button class="btn btn-warning"> Order Now </button>
-                                <a href="index.jsp" class="btn btn-success">Continue shopping</a>
+                                <button class="btn btn-warning"> Замовити зараз </button>
+                                <a href="index.jsp" class="btn btn-success">Продовжити покупку </a>
                             </div>
 
                         </form>

@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>EBook: Register </title>
+    <title>Реєстрація</title>
     <%@include file="all_component/allCss.jsp" %>
 </head>
 <body style="background-color: #e6e8eb">
@@ -15,7 +15,7 @@
         <div class="col-md-4 offset-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="text-center">Registration Page</h4>
+                    <h4 class="text-center">Реєстрація</h4>
 
                     <c:if test="${not empty successMsg}">
                         <h5 class="text-center text-success">${successMsg}</h5>
@@ -29,32 +29,32 @@
 
                     <form action="register" method="post">
                         <div class="form-group">
-                            <label for="exampleInputName">Enter Full Name</label>
+                            <label for="exampleInputName">Введіть повне ім'я</label>
                             <input type="text" class="form-control" id="exampleInputName"
                                    aria-describedby="emailHelp" required="required" name="fname">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
+                            <label for="exampleInputEmail1">Пошта</label>
                             <input type="email" class="form-control" id="exampleInputEmail1"
                                    aria-describedby="emailHelp" required="required" name="email">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPhone">Phone Number</label>
+                            <label for="exampleInputPhone">Номер телефону</label>
                             <input type="number" class="form-control" id="exampleInputPhone"
                                    aria-describedby="emailHelp" required="required" name="phone">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label for="exampleInputPassword1">Пароль</label>
                             <input type="password" class="form-control" id="exampleInputPassword1"
                                    required="required" name = "password">
                         </div>
                         <div class="form-check">
                             <input type="checkbox", class="form-check-input" name="check"
                             id="exampleCheck1"> <label class="form-check-label" for="exampleCheck1">
-                            Agree with community rules </label>
+                            Погоджуюсь з правилами суспільства </label>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Зареєструватись</button>
                         </div>
                     </form>
                 </div>

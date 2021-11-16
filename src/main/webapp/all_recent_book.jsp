@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>All Recent Books</title>
+    <title>Всі недавні книжки</title>
     <%@include file="all_component/allCss.jsp" %>
 </head>
 <body  style="background-color: #e6e8eb">
@@ -47,7 +47,7 @@
                         %>
                         <p>Categories: <%= bookDtls.getBook_category()%></p>
                         <div class="row">
-                            <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-5"> View Details</a>
+                            <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-5"> Інформація про книгу </a>
                             <a href="" class="btn btn-danger btn-sm ml-1">
                                 <%=bookDtls.getPrice()%> <i class="fas fa-dollar-sign"></i></a>
                         </div>
@@ -58,14 +58,14 @@
 
                             <% if (u==null)
                             {%>
-                            <a href="login.jsp" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                            <a href="login.jsp" class="btn btn-danger btn-sm ml-2"> Корзина </a>
                             <%} else {%>
-                            <a href="cart?bid=<%=bookDtls.getBook_id() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                            <a href="cart?bid=<%=bookDtls.getBook_id() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2"> Корзина </a>
                             <%
                                 }
                             %>
 
-                            <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-2"> View Details</a>
+                            <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-2"> Інформація про книгу </a>
 
                             <a href="" class="btn btn-danger btn-sm ml-2">
                                 <%=bookDtls.getPrice()%> <i class="fas fa-dollar-sign"></i></a>

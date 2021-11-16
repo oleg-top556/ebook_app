@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Helpline</title>
+    <title>Допоміжна лінія</title>
     <%@include file="all_component/allCss.jsp" %>
 </head>
 <body style="background-color: #e6e8eb">
@@ -14,10 +14,10 @@
             <div class="text-success ">
                 <i class="fas fa-headset fa-8x"></i>
             </div>
-            <h1> 24*7 Service </h1>
-            <h2> Help Line Number</h2>
+            <h1> 24*7 Сервіс </h1>
+            <h2> Номер підтримки</h2>
             <h3>+38(099)-555-44-33</h3>
-                <a href="index.jsp" class="btn btn-primary mt-2"> Home </a>
+                <a href="index.jsp" class="btn btn-primary mt-2"> Додому </a>
             </div>
         </div>
     </div>

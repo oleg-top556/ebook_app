@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Ebook: Index</title>
+    <title> Головна сторінка </title>
     <%@include file="all_component/allCss.jsp" %>
     <style type="text/css">
         .back-img{
@@ -32,14 +32,14 @@
 
     <%@include file="all_component/navbar.jsp" %>
     <div class="container-fluid back-img" >
-        <h2 class = "text-white text_h2" style="margin-left: 31.5%">
-            <i class="fas fa-book"></i> EBook Management System </h2>
+        <h2 class = "text-white text_h2" style="margin-left: 30%">
+            <i class="fas fa-book"></i> Система керування книгами </h2>
     </div>
 
 <!-- Start Recent Book-->
 
     <div class="container">
-        <h3 class="text-center"> Recent Book </h3>
+        <h3 class="text-center"> Нещодавні книги </h3>
         <div class="row">
             <%
                 BookDAOImpl dao2 = new BookDAOImpl(DataBaseConnection.getConnection());
@@ -59,7 +59,7 @@
                              %>
                         <p>Categories: <%= bookDtls.getBook_category()%></p>
                         <div class="row">
-                            <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-5"> View Details</a>
+                            <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>" class="btn btn-success btn-sm ml-5">Деталі книги</a>
                             <a href="" class="btn btn-danger btn-sm ml-1">
                                 <%=bookDtls.getPrice()%> <i class="fas fa-dollar-sign"></i></a>
                         </div>
@@ -70,15 +70,15 @@
 
                             <% if (u==null)
                             {%>
-                            <a href="login.jsp" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                            <a href="login.jsp" class="btn btn-danger btn-sm ml-2"> Корзина </a>
                             <%} else {%>
-                            <a href="cart?bid=<%=bookDtls.getBook_id() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                            <a href="cart?bid=<%=bookDtls.getBook_id() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2"> Корзина </a>
                             <%
                                 }
                             %>
 
                             <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>"
-                               class="btn btn-success btn-sm ml-1"> View Details</a>
+                               class="btn btn-success btn-sm ml-1">Деталі книги</a>
                             <a href="" class="btn btn-danger btn-sm ml-1">
                                 <%=bookDtls.getPrice()%> <i class="fas fa-dollar-sign"></i></a>
                         </div>
@@ -94,7 +94,7 @@
 
         </div>
         <div class="text-center mt-1">
-            <a href="all_recent_book.jsp" class="btn btn-danger btn-sm text-white"> View All</a>
+            <a href="all_recent_book.jsp" class="btn btn-danger btn-sm text-white"> Дивитись всі</a>
         </div>
     </div>
     <!-- End Recent Book-->
@@ -105,7 +105,7 @@
     <!-- Start New Book-->
 
     <div class="container">
-        <h3 class="text-center"> New Book </h3>
+        <h3 class="text-center"> Нові книги </h3>
         <div class="row">
 
                 <%
@@ -126,16 +126,16 @@
 
                             <% if (u==null)
                             {%>
-                            <a href="login.jsp" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                            <a href="login.jsp" class="btn btn-danger btn-sm ml-2">Корзина</a>
                             <%} else {%>
-                            <a href="cart?bid=<%=bookDtls.getBook_id() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">  Add Cart</a>
+                            <a href="cart?bid=<%=bookDtls.getBook_id() %>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2"> Корзина</a>
                             <%
                             }
                             %>
 
 
                             <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>"
-                               class="btn btn-success btn-sm ml-1"> View Details</a>
+                               class="btn btn-success btn-sm ml-1"> Деталі книги </a>
 
                             <a href="" class="btn btn-danger btn-sm ml-1">
                                 <%=bookDtls.getPrice()%>  <i class="fas fa-dollar-sign"></i> </a>
@@ -150,7 +150,7 @@
         </div>
 
         <div class="text-center mt-1">
-            <a href="all_new_book.jsp" class="btn btn-danger btn-sm text-white"> View All</a>
+            <a href="all_new_book.jsp" class="btn btn-danger btn-sm text-white">Відкрити всі</a>
         </div>
     </div>
     <!-- End New Book-->
@@ -161,7 +161,7 @@
     <!-- Start Old Book-->
 
     <div class="container">
-        <h3 class="text-center"> Old Book </h3>
+        <h3 class="text-center"> Старі книжки </h3>
         <div class="row">
 
                     <%
@@ -179,7 +179,7 @@
                                 <p><%=bookDtls.getBook_category()%></p>
                                 <div class="row">
                                     <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>"
-                                       class="btn btn-success btn-sm ml-5"> View Details</a>
+                                       class="btn btn-success btn-sm ml-5"> Деталі книги </a>
                                     <a href="" class="btn btn-danger btn-sm ml-1">
                                         <%=bookDtls.getPrice()%>  <i class="fas fa-dollar-sign"></i> </a>
                                 </div>
@@ -194,7 +194,7 @@
         </div>
 
         <div class="text-center mt-1">
-            <a href="all_old_books.jsp" class="btn btn-danger btn-sm text-white"> View All</a>
+            <a href="all_old_books.jsp" class="btn btn-danger btn-sm text-white"> Відкрити всі </a>
         </div>
     </div>
     <!-- End Old Book-->

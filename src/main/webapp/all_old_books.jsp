@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>All Old Books</title>
+    <title>Всі старі книжки</title>
     <%@include file="all_component/allCss.jsp" %>
 </head>
 <body  style="background-color: #e6e8eb">
@@ -36,7 +36,7 @@
                     <p><%=bookDtls.getBook_category()%></p>
                     <div class="row">
                         <a href="view_books.jsp?bid=<%=bookDtls.getBook_id()%>"
-                           class="btn btn-success btn-sm ml-5"> View Details</a>
+                           class="btn btn-success btn-sm ml-5"> Інформація про книгу </a>
                         <a href="" class="btn btn-danger btn-sm ml-1">
                             <%=bookDtls.getPrice()%>  <i class="fas fa-dollar-sign"></i> </a>
                     </div>

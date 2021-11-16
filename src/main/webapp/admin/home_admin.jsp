@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Admin: Home</title>
+    <title>Адмін: Головна сторінка </title>
     <%@include file="allCss_for_admin.jsp"%>
     <style type="text/css">
         a{
@@ -29,7 +29,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <i class="fas fa-plus-square fa-3x text-primary"></i><br>
-                            <h4>Add books</h4>
+                            <h4>Добавити книги</h4>
                             -----------
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <i class="fas fa-book-open fa-3x text-danger"></i><br>
-                            <h4>All Books</h4>
+                            <h4>Всі Книги</h4>
                             -----------
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <i class="fas fa-box-open fa-3x text-warning"></i><br>
-                            <h4>Orders</h4>
+                            <h4>Замовлення</h4>
                             -----------
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <i class="fas fa-sign-out-alt fa-3x text-primary"></i><br>
-                            <h4>Logout</h4>
+                            <h4>Вихід</h4>
                             -----------
                         </div>
                     </div>
@@ -83,9 +83,9 @@
             </div>
             <div class="modal-body">
                 <div class="text-center">
-                    <h4> Do you want logout? </h4>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="../logout" type="button" class="btn btn-primary text-white">Logout</a>
+                    <h4> Ви дійсно бажаєте вийти? </h4>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                    <a href="../logout" type="button" class="btn btn-primary text-white">Вихід</a>
                 </div>
             </div>
             <div class="modal-footer">

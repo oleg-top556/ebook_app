@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Admin: Orders</title>
+    <title>Адмін: Замовлення</title>
     <%@include file="allCss_for_admin.jsp"%>
 </head>
 <body style="background-color: #e6e8eb">
@@ -31,15 +31,15 @@
 <table class="table">
     <thead class="thead-dark">
     <tr>
-        <th scope="col">Order Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Address</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Book Name</th>
-        <th scope="col">Author</th>
-        <th scope="col">Price</th>
-        <th scope="col">Payment type</th>
+        <th scope="col">Замовлення номер</th>
+        <th scope="col">Ім'я</th>
+        <th scope="col">Пошта</th>
+        <th scope="col">Адреса</th>
+        <th scope="col">Телефон</th>
+        <th scope="col">Назва книги</th>
+        <th scope="col">Автор</th>
+        <th scope="col">Ціна</th>
+        <th scope="col">Вибрати тип оплати</th>
     </tr>
     </thead>
     <tbody>
