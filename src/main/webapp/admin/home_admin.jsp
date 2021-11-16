@@ -95,7 +95,7 @@
     </div>
 </div>
 <!-- end logout modal  -->
-<div style="margin-top: 262px">
+<div style="margin-top: 287px">
 <%@include file="footer_for_admin.jsp"%>
 </div>
 </body>

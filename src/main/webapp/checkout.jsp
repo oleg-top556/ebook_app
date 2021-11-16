@@ -145,7 +145,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="inputState">Тип оплати</label>
+                                <label for="inputState">Cпосіб оплати</label>
                                 <select id="inputState" class="form-control" name="payment">
                                     <option value="noselect">--Вибрати--</option>
                                     <option value="COD">Оплата налічкой</option>
