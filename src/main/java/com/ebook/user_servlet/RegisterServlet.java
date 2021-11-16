@@ -39,19 +39,19 @@ public class RegisterServlet extends HttpServlet {
                     boolean f = dao.userRegister(user);
 
                     if (f) {
-                        session.setAttribute("successMsg", "Registration Successfully");
+                        session.setAttribute("successMsg", "Регістрація успішна");
                         resp.sendRedirect("register.jsp");
                     } else {
-                        session.setAttribute("failed_reg", "Something wrong on server");
+                        session.setAttribute("failed_reg", "На сервері сталася помилка");
                         resp.sendRedirect("register.jsp");
                     }
                 }else {
-                    session.setAttribute("failed_reg", "User Already exist. Try Another email");
+                    session.setAttribute("failed_reg", "Користувач вже зареєстрований.Спробуйте іншу пошту");
                     resp.sendRedirect("register.jsp");
                 }
 
             } else {
-                session.setAttribute("failed_reg", "Don't forget agree with rules");
+                session.setAttribute("failed_reg", "Не забувайте погоджуватись з правилами");
                 resp.sendRedirect("register.jsp");
             }
         } catch (Exception e) {

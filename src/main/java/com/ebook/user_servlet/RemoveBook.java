@@ -26,10 +26,10 @@ public class RemoveBook extends HttpServlet {
         HttpSession session = req.getSession();
 
         if (f){
-            session.setAttribute("successMsg","Book removed from Cart");
+            session.setAttribute("successMsg","Книжка була видалена з корзини");
             resp.sendRedirect("checkout.jsp");
         }else{
-            session.setAttribute("failedMsg","Something wrong on server");
+            session.setAttribute("failedMsg","На сервері сталася помилка");
             resp.sendRedirect("checkout.jsp");
         }
     }

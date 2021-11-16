@@ -16,8 +16,6 @@ public class SearchBookServlet extends HttpServlet {
         try {
             String ch = req.getParameter("ch");
 
-
-
         }catch (Exception e){
             e.printStackTrace();
         }

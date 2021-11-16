@@ -23,10 +23,10 @@ public class BooksDeleteServlet extends HttpServlet {
             HttpSession session = req.getSession();
 
             if (f){
-                session.setAttribute("successMsg", "Book Delete Successfully");
+                session.setAttribute("successMsg", "Книжка була видалена успішно");
                 resp.sendRedirect("admin/all_books.jsp");
             }else {
-                session.setAttribute("failedMsg", "Something wrong on server");
+                session.setAttribute("failedMsg", "На сервері сталася помилка");
                 resp.sendRedirect("admin/all_books.jsp");
             }
 

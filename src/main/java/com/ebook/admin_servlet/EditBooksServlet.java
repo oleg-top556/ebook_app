@@ -35,10 +35,10 @@ public class EditBooksServlet extends HttpServlet {
             HttpSession session = req.getSession();
 
             if (f){
-                session.setAttribute("successMsg", "Book Update Successfully");
+                session.setAttribute("successMsg", "Книжка була обновлена успішно");
                 resp.sendRedirect("admin/all_books.jsp");
             }else {
-                session.setAttribute("failedMsg", "Something wrong on server");
+                session.setAttribute("failedMsg", "На сервері сталася помилка");
                 resp.sendRedirect("admin/all_books.jsp");
             }
 

@@ -40,10 +40,10 @@ public class CartServlet extends HttpServlet {
             HttpSession session = req.getSession();
 
             if (f){
-                session.setAttribute("addCart","Book added to cart");
+                session.setAttribute("addCart","Книжка була додана в корзину");
                 resp.sendRedirect("all_new_book.jsp");
             } else {
-                session.setAttribute("failedCart","Something wrong on server");
+                session.setAttribute("failedCart","На сервері сталася помилка");
                 resp.sendRedirect("all_new_book.jsp");
             }
 

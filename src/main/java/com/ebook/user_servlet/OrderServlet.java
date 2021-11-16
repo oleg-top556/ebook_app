@@ -74,14 +74,14 @@ public class OrderServlet extends HttpServlet {
                 }
 
                 if ("noselect".equals(paymentType)){
-                    session.setAttribute("failedMsg","Choose Payment Method");
+                    session.setAttribute("failedMsg","Виберіть спосіб оплати");
                     resp.sendRedirect("checkout.jsp");
                 } else {
                     boolean f = dao2.saveOrder(orderList);
                     if (f){
                         resp.sendRedirect("order_success.jsp");
                     }else {
-                        session.setAttribute("failedMsg","Your order failed");
+                        session.setAttribute("failedMsg","Ваше замовлення не прийнято");
                         resp.sendRedirect("checkout.jsp");
                     }
                 }

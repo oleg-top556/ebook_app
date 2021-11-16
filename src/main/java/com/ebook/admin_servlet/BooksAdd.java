@@ -39,10 +39,10 @@ public class BooksAdd extends HttpServlet {
 
                 part.write("C:\\Users\\User\\Desktop\\All_of_IT\\All_of_Java\\Spring\\ebook_app\\src\\main\\webapp\\book"+File.separator+fileName);
 
-                session.setAttribute("successMsg","Book add successfully");
+                session.setAttribute("successMsg","Книжка була додана успішно");
                 resp.sendRedirect("admin/add_books.jsp");
             }else {
-                session.setAttribute("failedMsg","Something wrong on Server");
+                session.setAttribute("failedMsg","На сервері сталася помилка");
                 resp.sendRedirect("admin/add_books.jsp");
             }
 

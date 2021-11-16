@@ -37,14 +37,14 @@ public class UpdateProfileServlet extends HttpServlet {
             if (f){
                 boolean f2 = dao.updateProfile(user);
                 if (f2){
-                    session.setAttribute("successMsg", "User Profile Update");
+                    session.setAttribute("successMsg", "Профіль користувача змінений ");
                     resp.sendRedirect("edit_profile.jsp");
                 }else {
-                    session.setAttribute("failedMsg", "Something wrong on server");
+                    session.setAttribute("failedMsg", "На сервері сталася помилка");
                     resp.sendRedirect("edit_profile.jsp");
                 }
             }else {
-                session.setAttribute("failedMsg", "Your password is incorrect");
+                session.setAttribute("failedMsg", "Ваш пароль неправильний ");
                 resp.sendRedirect("edit_profile.jsp");
             }
 
