@@ -18,7 +18,7 @@
 <%@include file="navbar_for_admin.jsp"%>
 
 
-<h3 class="text-center"> Hello Admin </h3>
+<h3 class="text-center"> Привіт, адмін </h3>
 <c:if test="${not empty successMsg}">
     <p class="text-center text-success"> ${successMsg}</p>
     <c:remove var="successMsg" scope="session" />

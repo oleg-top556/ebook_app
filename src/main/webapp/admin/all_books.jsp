@@ -17,7 +17,7 @@
 <c:if test="${empty userobj}">
     <c:redirect url="../login.jsp"/>
 </c:if>
-<h3 class="text-center"> Hello Admin </h3>
+<h3 class="text-center"> Привіт,адмін </h3>
 
 <c:if test="${not empty successMsg}">
     <h5 class="text-center text-success"> ${successMsg}</h5>

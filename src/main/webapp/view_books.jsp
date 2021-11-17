@@ -1,6 +1,7 @@
 <%@ page import="com.ebook.DAO.BookDAOImpl" %>
 <%@ page import="com.ebook.DataBaseConnect.DataBaseConnection" %>
 <%@ page import="com.ebook.entity.BookDtls" %>
+<%@ page import="com.ebook.entity.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <head>
@@ -10,6 +11,10 @@
 </head>
 <body style="background-color: #e6e8eb">
 <%@include file="all_component/navbar.jsp" %>
+
+<%
+    User u = (User) session.getAttribute("userobj");
+%>
 
     <%
     int bid= Integer.parseInt(request.getParameter("bid"));
@@ -67,10 +72,19 @@
             </div>
             <%
                 }else {%>
+
+            <% if (u==null)
+            {%>
+            <a href="login.jsp" class="btn btn-danger btn-sm ml-2"> Корзина </a>
+            <%} else {%>
             <div class="text-center p-3">
-                <a href="" class="btn btn-success"> <i class="fas fa-cart-plus"></i> Корзина</a>
+                <a href="cart?bid=<%=bookDtls.getBook_id()%>&&uid=<%=u.getId()%>" class="btn btn-success"> <i class="fas fa-cart-plus"></i> Корзина</a>
                 <a href="" class="btn btn-danger"> 200 <i class="fas fa-dollar-sign"> </i> </a>
             </div>
+            <%
+                }
+            %>
+
             <%}
             %>
 
