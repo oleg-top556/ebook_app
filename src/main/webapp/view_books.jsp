@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-md-4 text-danger text-center p-2">
                     <i class="fas fa-money-bill-alt fa-2x"></i>
-                    <p> Оплата налічкой </p>
+                    <p> Оплата готівкою </p>
                 </div>
                 <div class="col-md-4 text-danger text-center p-2">
                     <i class="fas fa-undo-alt fa-2x"></i>

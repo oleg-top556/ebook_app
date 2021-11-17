@@ -18,7 +18,7 @@
 </c:if>
 <%@include file="all_component/navbar.jsp" %>
     <div class="container p-3">
-        <h3 class="text-center text-primary"> Your Order </h3>
+        <h3 class="text-center text-primary"> Ваші замовлення </h3>
         <table class="table table-striped mt-3">
             <thead class="bg-primary text-white">
             <tr>
