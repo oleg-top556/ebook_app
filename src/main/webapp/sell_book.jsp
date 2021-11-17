@@ -18,7 +18,7 @@
             <div class="col-md-4 offset-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="text-center text-success">Продажа старої книги</h4>
+                        <h4 class="text-center text-success">Продаж книги</h4>
 
                         <c:if test="${not empty successMsg}">
                             <p class="text-center text-primary"> ${successMsg}</p>
@@ -59,7 +59,7 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary"> Продажа </button>
+                                <button type="submit" class="btn btn-primary"> Продаж </button>
                             </div>
 
                         </form>

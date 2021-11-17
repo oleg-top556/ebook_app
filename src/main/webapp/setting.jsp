@@ -38,7 +38,7 @@
                         <div class="text-primary">
                         <i class="fas fa-book-open fa-3x"></i>
                         </div>
-                        <h3> Продажа старої книги </h3>
+                        <h4> Продаж книги </h4>
                     </div>
                 </div>
             </a>
@@ -52,7 +52,7 @@
                         <div class="text-primary">
                             <i class="fas fa-book-open fa-3x"></i>
                         </div>
-                        <h3> Стара книжка </h3>
+                        <h4> Всі книжки для продажу </h4>
                     </div>
                 </div>
             </a>
@@ -108,7 +108,7 @@
     </div>
 </div>
 
-<div style="margin-top: 7.1rem"></div>
+<div style="margin-top: 7.4rem"></div>
 <%@include file="all_component/footer.jsp"%>
 </body>
 </html>

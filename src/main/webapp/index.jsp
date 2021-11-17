@@ -161,7 +161,7 @@
     <!-- Start Old Book-->
 
     <div class="container">
-        <h3 class="text-center"> Старі книжки </h3>
+        <h3 class="text-center"> Книжки не в наявності </h3>
         <div class="row">
 
                     <%
